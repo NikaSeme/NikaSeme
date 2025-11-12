@@ -1,0 +1,93 @@
+<Window x:Class="ClearVolumeWindows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="400" Width="500"
+        WindowStartupLocation="CenterOwner"
+        Background="#1A1A1A">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0" 
+                  Text="Settings" 
+                  FontSize="24" 
+                  FontWeight="Bold"
+                  Foreground="White"
+                  Margin="0,0,0,20"/>
+
+        <!-- Settings Content -->
+        <StackPanel Grid.Row="1">
+            <!-- Appearance -->
+            <GroupBox Header="Appearance" 
+                     Foreground="White"
+                     BorderBrush="#40FFFFFF"
+                     Margin="0,0,0,15">
+                <StackPanel Margin="10">
+                    <CheckBox x:Name="DarkModeCheckBox" 
+                             Content="Dark Mode" 
+                             Foreground="White"
+                             IsChecked="True"
+                             IsEnabled="False"/>
+                    <TextBlock Text="Dark mode is always enabled" 
+                              Foreground="#B0FFFFFF"
+                              FontSize="11"
+                              Margin="25,5,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Units -->
+            <GroupBox Header="Units" 
+                     Foreground="White"
+                     BorderBrush="#40FFFFFF"
+                     Margin="0,0,0,15">
+                <StackPanel Margin="10">
+                    <RadioButton x:Name="MLRadioButton" 
+                                Content="Milliliters (ml)" 
+                                Foreground="White"
+                                IsChecked="True"
+                                IsEnabled="False"/>
+                    <TextBlock Text="Only milliliters supported in v1" 
+                              Foreground="#B0FFFFFF"
+                              FontSize="11"
+                              Margin="25,5,0,0"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- About -->
+            <GroupBox Header="About" 
+                     Foreground="White"
+                     BorderBrush="#40FFFFFF">
+                <StackPanel Margin="10">
+                    <TextBlock Text="ClearVolume" 
+                              Foreground="White"
+                              FontWeight="SemiBold"
+                              Margin="0,0,0,5"/>
+                    <TextBlock Text="Version 1.0.0" 
+                              Foreground="#B0FFFFFF"
+                              FontSize="12"
+                              Margin="0,0,0,5"/>
+                    <TextBlock Text="Estimate liquid volume in clear bottles" 
+                              Foreground="#B0FFFFFF"
+                              FontSize="11"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="2" 
+                   Orientation="Horizontal" 
+                   HorizontalAlignment="Right"
+                   Margin="0,20,0,0">
+            <Button Content="Close" 
+                   Click="CloseButton_Click"
+                   Width="100"
+                   Height="35"
+                   Margin="5,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
+
